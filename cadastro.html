@@ -87,14 +87,14 @@
             <fieldset>
                 <legend>Como deseja contribuir?</legend>
 
-                <label for="option-volunteer">Quero ser Voluntário</label>
-                <input type="checkbox" id="option-volunteer" name="" required>
+                <input type="checkbox" id="option-volunteer" name="contribution_type[]" value="volunteer">
+                <label for="option-volunteer">Quero ser voluntário(a)</label>
 
+                <input type="checkbox" id="option-donate" name="contribution_type[]" value="donation">
                 <label for="option-donate">Quero fazer uma doação</label>
-                <input type="checkbox" id="option-donate" name="" required>
-
-                <label for="phone">Porque quer se juntar a nós?</label>
-                <textarea type="" id="phone" name="phone" required>
+ 
+                <label for="motivation">Porque quer se juntar a nós?</label>
+                <textarea id="motivation" name="motivation" rows="4" placeholder="Escreva sua mensagem aqui..." required>
 
                 
             </fieldset>
