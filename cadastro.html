@@ -21,22 +21,33 @@
         <h2>Cadastro</h2>
         <form>
             <fieldset>
-                <legend>Formulário de cadastro</legend>
+                <legend>Dados Pessoais</legend>
 
-                <label for="name">Nome(completo):</label>
+                <label for="name">Nome(completo)*:</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="cpf">CPF:</label>
-                <input type="number" id="cpf" pattern="[0-9]{3}/.[0-9]{3}/.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" title="Formato exigido: 000.000.000-00" name="cpf">
+                <label for="cpf">CPF*:</label>
+                <input type="text" id="cpf" pattern="[0-9]{3}/.[0-9]{3}/.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" title="Formato exigido: 000.000.000-00" name="cpf" required>
 
                 <label for="date">Data de Nascimento:</label>
                 <input type="date" id="date" required>
+
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+            </fieldset>    
+
+            <fieldset>  
+                <legend>Endereço</legend>
 
                 <label for="address">Endereço:</label>
                 <input type="text" id="address" required>
 
                 <label>CEP</label>
-                <input type="text" id="postcode" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" title="Formato exigido: 00000-000">
+                <input type="text" id="postcode" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" title="Formato exigido: 00000-000" required>
 
                 <label for="city">Cidade:</label>
                 <input type="text" id="city" required>
@@ -71,16 +82,24 @@
                     <option value="Aracaju">SE</option>
                     <option value="Palmas">TO</option> 
                 </datalist>
+            </fieldset>  
 
-                <label for="phone">Telefone:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <fieldset>
+                <legend>Como deseja contribuir?</legend>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="option-volunteer">Quero ser Voluntário</label>
+                <input type="checkbox" id="option-volunteer" name="" required>
+
+                <label for="option-donate">Quero fazer uma doação</label>
+                <input type="checkbox" id="option-donate" name="" required>
+
+                <label for="phone">Porque quer se juntar a nós?</label>
+                <textarea type="" id="phone" name="phone" required>
 
                 
             </fieldset>
             <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
 
         </form>
     </section>
