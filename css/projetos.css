@@ -48,11 +48,22 @@ hr {
   margin: var(--space-xl) 0;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
 header {
   background-color: var(--color-white);
   padding: var(--space-xl) var(--space-lg);
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  grid-column: span 12;
 }
 
 header img {
@@ -72,6 +83,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: var(--space-lg);
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -89,13 +101,11 @@ nav a:hover {
   color: var(--color-white);
 }
 
-
 main {
-  max-width: 900px;
-  margin: var(--space-xxl) auto;
-  padding: 0 var(--space-lg);
-  display: flex;
-  flex-direction: column;
+  grid-column: span 12;
+  margin: var(--space-xxl) 0;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--space-xxl);
 }
 
@@ -104,6 +114,7 @@ main section {
   padding: var(--space-xl);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  grid-column: span 12;
 }
 
 main h2 {
@@ -115,10 +126,9 @@ main h2 {
   padding-left: var(--space-sm);
 }
 
-/* --- Cards --- */
 .projetos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--space-lg);
 }
 
@@ -127,6 +137,7 @@ main h2 {
   padding: var(--space-lg);
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  grid-column: span 12; 
 }
 
 .projetos h3 {
@@ -148,12 +159,12 @@ main h2 {
   margin-bottom: 0;
 }
 
-/* --- Listas --- */
 main section ul {
   padding-left: var(--space-lg);
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  margin: 0;
 }
 
 main section li {
@@ -203,15 +214,17 @@ details p {
   font-size: var(--font-size-body);
 }
 
+
 footer {
   background-color: var(--color-primary);
   color: var(--color-white);
   padding: var(--space-xxl) var(--space-lg);
   margin-top: var(--space-xxl);
+  grid-column: span 12;
 }
 
 footer > div {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -263,4 +276,64 @@ footer div:last-child img {
   width: 30px;
   height: auto;
   filter: brightness(0) invert(1);
+}
+
+/* Dispositivos Móveis Compactos (Até 480px) */
+@media (max-width: 480px) {
+  :root {
+    --font-size-h1: 2rem;
+    --font-size-h2: 1.5rem;
+  }
+  .grid-container {
+    padding: 0 var(--space-sm);
+    gap: var(--space-sm);
+  }
+  nav {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+}
+
+/* Tablets e Dispositivos de Tela Média (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid-container {
+    padding: 0 var(--space-md);
+  }
+  .projetos article {
+    grid-column: span 6; /* Cards divididos em 2 colunas no tablet (6 de 12) */
+  }
+}
+
+/* Laptops e Desktops Padrão (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-container {
+    max-width: 960px;
+  }
+  .projetos article {
+    grid-column: span 4; /* Cards divididos em 3 colunas (4 de 12) */
+  }
+}
+
+/* Desktops Amplos (1025px a 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .grid-container {
+    max-width: 1280px;
+  }
+  .projetos article {
+    grid-column: span 4; /* Mantém 3 colunas confortáveis */
+  }
+}
+
+/* Desktops Panorâmicos / Telas Ultra-Amplas (Acima de 1440px) */
+@media (min-width: 1441px) {
+  .grid-container {
+    max-width: 1560px;
+    gap: var(--space-xl);
+  }
+  .projetos article {
+    grid-column: span 3; /* Exibe 4 cards por linha em monitores gigantes (3 de 12) */
+  }
+  body {
+    font-size: 1.125rem;
+  }
 }
