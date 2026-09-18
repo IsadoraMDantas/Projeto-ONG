@@ -241,8 +241,6 @@ footer div:last-child img {
   filter: brightness(0) invert(1);
 }
 
-
-
 /* Dispositivos Móveis Compactos (Até 480px) */
 @media (max-width: 480px) {
   :root {
@@ -297,3 +295,4 @@ footer div:last-child img {
     font-size: 1.125rem;
   }
 }
+
