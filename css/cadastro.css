@@ -157,11 +157,11 @@ legend {
 }
 
 .field-half {
-  grid-column: span 12; 
+  grid-column: span 6; 
 }
 
 .field-third {
-  grid-column: span 12; 
+  grid-column: span 4; 
 }
 
 label {
@@ -179,11 +179,11 @@ input[type="tel"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: var(--space-sm) var(--space-md);
+  padding: 0.75rem 1rem; /* Aumentado de var(--space-sm) para dar mais altura e conforto */
   font-size: var(--font-size-body);
   font-family: var(--font-family);
-  border: 1px solid #ced4da;
-  border-radius: 4px;
+  border: 1.5px solid #ced4da; 
+  border-radius: 6px;
   background-color: var(--color-white);
   color: var(--color-neutral-dark);
   transition: border-color 0.2s, box-shadow 0.2s;
